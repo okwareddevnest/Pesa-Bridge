@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables */
+:root {
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-secondary-50: #fdf4ff;
+  --color-secondary-100: #fae8ff;
+  --color-secondary-500: #d946ef;
+  --color-secondary-600: #c026d3;
+  --color-secondary-700: #a21caf;
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Focus Styles */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+}
+
+/* Button Styles */
+.btn {
+  @apply inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg transition-all duration-200 focus-ring;
+}
+
+.btn-sm {
+  @apply px-3 py-1.5 text-xs;
+}
+
+.btn-primary {
+  @apply bg-primary-600 text-white hover:bg-primary-700 active:bg-primary-800;
+}
+
+.btn-secondary {
+  @apply bg-secondary-600 text-white hover:bg-secondary-700 active:bg-secondary-800;
+}
+
+.btn-outline {
+  @apply border-gray-300 text-gray-700 bg-white hover:bg-gray-50 active:bg-gray-100;
+}
+
+.btn-ghost {
+  @apply border-transparent text-gray-600 hover:bg-gray-100 active:bg-gray-200;
+}
+
+/* Card Styles */
+.card {
+  @apply bg-white rounded-xl shadow-soft border border-gray-200 overflow-hidden;
+}
+
+.card-hover {
+  @apply hover:shadow-medium transition-shadow duration-200;
+}
+
+/* Form Styles */
+.form-input {
+  @apply block w-full px-3 py-2 border border-gray-300 rounded-lg focus-ring focus:border-primary-500 transition-colors;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-gray-700 mb-2;
+}
+
+.form-error {
+  @apply mt-1 text-sm text-error-600;
+}
+
+/* Badge Styles */
+.badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.badge-success {
+  @apply bg-success-100 text-success-800;
+}
+
+.badge-warning {
+  @apply bg-warning-100 text-warning-800;
+}
+
+.badge-error {
+  @apply bg-error-100 text-error-800;
+}
+
+.badge-info {
+  @apply bg-primary-100 text-primary-800;
+}
+
+/* Animation Classes */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.2s ease-out;
+}
+
+/* Loading Spinner */
+.spinner {
+  @apply animate-spin rounded-full border-2 border-gray-300 border-t-primary-600;
+}
+
+/* Virtual Card Styles */
+.virtual-card {
+  @apply bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl p-6 text-white shadow-large;
+}
+
+/* Status Indicators */
+.status-indicator {
+  @apply inline-flex items-center px-2 py-1 rounded-full text-xs font-medium;
+}
+
+.status-approved {
+  @apply bg-success-100 text-success-800;
+}
+
+.status-pending {
+  @apply bg-warning-100 text-warning-800;
+}
+
+.status-declined {
+  @apply bg-error-100 text-error-800;
+}
+
+/* Transaction Status Colors */
+.transaction-approved {
+  @apply text-success-600;
+}
+
+.transaction-pending {
+  @apply text-warning-600;
+}
+
+.transaction-declined {
+  @apply text-error-600;
+}
+
+/* M-Pesa Specific Styles */
+.mpesa-gradient {
+  @apply bg-gradient-to-r from-mpesa-500 to-mpesa-600;
+}
+
+/* Skeleton Loading */
+.skeleton {
+  @apply animate-pulse bg-gray-200 rounded;
+}
+
+/* Tooltip */
+.tooltip {
+  @apply absolute z-10 px-2 py-1 text-xs text-white bg-gray-900 rounded shadow-lg opacity-0 pointer-events-none transition-opacity duration-200;
+}
+
+.tooltip-trigger:hover .tooltip {
+  @apply opacity-100;
+}
+
+/* Modal */
+.modal-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50;
+}
+
+.modal-content {
+  @apply bg-white rounded-xl shadow-large max-w-md w-full mx-4 max-h-[90vh] overflow-y-auto;
+}
+
+/* Notification */
+.notification {
+  @apply fixed top-4 right-4 z-50 p-4 rounded-lg shadow-large max-w-sm;
+}
+
+.notification-success {
+  @apply bg-success-500 text-white;
+}
+
+.notification-error {
+  @apply bg-error-500 text-white;
+}
+
+.notification-warning {
+  @apply bg-warning-500 text-white;
+}
+
+.notification-info {
+  @apply bg-primary-500 text-white;
+} 
